@@ -1,0 +1,39 @@
+{
+  "presets": [
+    [
+      "env", {
+        "modules": false
+      }
+    ]
+  ],
+  "plugins": [
+    "transform-react-jsx",
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    [
+      "module-resolver", {
+        "root": ["./src"],
+        "alias": {
+          "@components": "components",
+          "@middleware": "server/middleware",
+          "@pages": "pages",
+          "@routes": "routes",
+          "@stores": "stores"
+        }
+      }
+    ],
+    [
+      "react-css-modules", {
+        "context": "./src",
+        "filetypes": {
+          ".scss": {
+            "syntax": "postcss-scss"
+          }
+        },
+        "removeImport": true,
+        "generateScopedName": "vfuk-[name]__[local]"
+      }
+    ]
+  ]
+}
