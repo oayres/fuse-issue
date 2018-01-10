@@ -11,7 +11,9 @@ const fuse = FuseBox.init({
       CSSPlugin()
     ],
     JSONPlugin()
-  ]
+  ],
+  log: true,
+  debug: true
 })
 
 fuse.dev({ port: 4445, httpServer: false })
